@@ -22,7 +22,7 @@
                     <li class="active">讲师列表</li>
                 </ol>
                 <div class="page-title">
-                    <a href="./teacher_add.html" class="btn btn-success btn-sm pull-right">添加讲师</a>
+                    <a href="add" class="btn btn-success btn-sm pull-right">添加讲师</a>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -107,7 +107,7 @@
         </div>
     </div>
 
-    <?php include('./views/common/javascript.html'); ?>
+    
     
     <script type="text/template" id="teacherTpl">
         {{each list}}
@@ -124,17 +124,24 @@
                 {{/if}}
              </td>
              <td>{{$value.tc_cellphone}}</td>
-             <td>
-                 <a href="#teacherModal" data-toggle="modal" class=    查 看</a>
-                 <a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>
-                 <a href="javascript::" class="btn btn-warning btn-xs">注 销</a>
+             <td data-tcId="{{$value.tc_id}}"  data-tcStatus="{{$value.tc_status}}">
+                 <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs">查 看</a>
+                 <a href="add" class="btn btn-info btn-xs">编 辑</a>
+                 <a href="javascript:;" class="btn btn-warning btn-xs zoq">
+                     {{if $value.tc_status == 0}}
+                     启用
+                     {{else}}
+                     注销 
+                     {{/if}}
+                 </a>
+                     
             </td>
         </tr>
         {{/each}}
     </script>
-
-    <script>
-        require(['teacherList'])
+    <?php include('./views/common/javascript.html'); ?>
+    <script type="text/javascript">
+        require(["teacherList"]);
     </script>
 </body>
 </html>
