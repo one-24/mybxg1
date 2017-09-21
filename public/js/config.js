@@ -5,7 +5,13 @@ require.config({
 		common:"../js/common",
 		cookie:"jquery-cookie/jquery.cookie",
 		template:"artTemplate/template",
+		bootstrap:"bootstrap/js/bootstrap",
 		login:"../js/login",
 		teacherList:"../js/teacher-list"
+	},
+	shim:{
+		bootstrap:{
+			deps:['jquery']
+		}
 	}
 });

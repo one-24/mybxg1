@@ -1,4 +1,4 @@
-define(['jquery','template'],function($,template){
+define(['jquery','template','bootstrap'],function($,template){
 	//console.log("aaa")
 	$.ajax({
 		type:"get",
@@ -34,6 +34,25 @@ define(['jquery','template'],function($,template){
 						}
 					}
 				})
+			})
+
+			//查看讲师信息
+			$(".preview").click(function(){
+				var td = $(this).closest("td");     //获取最近的父元素
+				var tcId = td.attr("data-tcId");
+				$.ajax({
+					url:"/api/teacher/view",
+					type:"get",
+					data:{tc_id:tcId},
+					dataType:"json",
+					success:function(data){
+						//console.log(data)
+						var html = template("modalTpl",data.result);
+						$("#modalInfo").html(html);
+						$("#teacherModal").modal();
+					}
+				})
+
 			})
 		}
 	})
