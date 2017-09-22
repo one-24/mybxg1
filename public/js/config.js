@@ -6,12 +6,19 @@ require.config({
 		cookie:"jquery-cookie/jquery.cookie",
 		template:"artTemplate/template",
 		bootstrap:"bootstrap/js/bootstrap",
+		util:"../js/util",
 		login:"../js/login",
-		teacherList:"../js/teacher-list"
+		teacherList:"../js/teacher-list",
+		teacherAdd:"../js/teacher-add",
+		datepicker:"bootstrap-datepicker/js/bootstrap-datepicker.min",
+		datepickerLanguage:"bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min"
 	},
 	shim:{
 		bootstrap:{
 			deps:['jquery']
+		},
+		datepickerLanguage:{
+			deps:['jquery','datepicker']
 		}
 	}
 });
