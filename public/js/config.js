@@ -15,7 +15,8 @@ require.config({
 		form:"jquery-form/jquery.form.min",
 		validate:"validate/jquery-validate.min",
 		settings:"../js/setting",
-		uploadify:"uploadify/jquery.uploadify.min"
+		uploadify:"uploadify/jquery.uploadify.min",
+		region:"jquery-region/jquery.region"
 	},
 	shim:{
 		bootstrap:{

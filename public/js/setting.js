@@ -1,4 +1,4 @@
-define(['jquery','template','uploadify'],function($,template){
+define(['jquery','template','uploadify','region'],function($,template){
 	//console.log("aaa");
 	$.ajax({
 		url:"/api/teacher/profile",
@@ -12,6 +12,7 @@ define(['jquery','template','uploadify'],function($,template){
 			$("#upfile").uploadify({
 				height:120,
 				width:120,
+				buttonText:"",
 				swf:"/public/assets/uploadify/uploadify.swf",
 				uploader:"/api/uploader/avatar",
 				itemTemplate:"<span></span>",
@@ -22,6 +23,10 @@ define(['jquery','template','uploadify'],function($,template){
 					//console.log(obj)
 					$(".preview img").attr("src",obj.result.path)
 				}
+			})
+			//三级联动功能
+			$("#pcd").region({
+				url:"/public/assets/jquery-region/region.json"
 			})
 		}
 	})
