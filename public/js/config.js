@@ -11,7 +11,9 @@ require.config({
 		teacherList:"../js/teacher-list",
 		teacherAdd:"../js/teacher-add",
 		datepicker:"bootstrap-datepicker/js/bootstrap-datepicker.min",
-		datepickerLanguage:"bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min"
+		datepickerLanguage:"bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min",
+		form:"jquery-form/jquery.form.min",
+		validate:"validate/jquery-validate.min"
 	},
 	shim:{
 		bootstrap:{
@@ -19,6 +21,9 @@ require.config({
 		},
 		datepickerLanguage:{
 			deps:['jquery','datepicker']
+		},
+		validate:{
+			deps:['jquery']
 		}
 	}
 });

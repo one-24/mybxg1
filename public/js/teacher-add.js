@@ -1,4 +1,4 @@
-define(['jquery','template','util','datepicker','datepickerLanguage'],function($,template,util){
+define(['jquery','template','util','datepicker','datepickerLanguage','form','validate'],function($,template,util){
 	var tcId = util.qs("tc-id")
 	//console.log(tcId)
 	if(tcId){
@@ -24,7 +24,7 @@ define(['jquery','template','util','datepicker','datepickerLanguage'],function($
 		$("#teacherInfo").html(html)
 		submitForm("/api/teacher/add")
 	}
-	function submitForm(url){
+	/*function submitForm(url){
 		$("#teacherBtn").click(function(){
 			console.log('sss')
 			$.ajax({
@@ -38,6 +38,27 @@ define(['jquery','template','util','datepicker','datepickerLanguage'],function($
 					}
 				}
 			})
+		})
+	}*/
+	function submitForm(url){
+		$("#teacherForm").validate({
+			sendForm:false,
+			valid:function(){
+				//所有的验证通过后才触发
+
+			},
+			description:{
+				tcName:{
+					required:'用户名不能为空'
+				},
+				tcPass:{
+					required:'密码不能为空',
+					pattern:'必须是六位数字'
+				},
+				tcJoinDate:{
+					required:'日期不能为空'
+				}
+			}
 		})
 	}
 })
