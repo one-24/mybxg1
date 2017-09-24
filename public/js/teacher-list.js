@@ -1,4 +1,6 @@
-define(['jquery','template','bootstrap'],function($,template){
+define(['jquery','template','util','bootstrap'],function($,template,util){
+	//console.log(location.pathname,'aaa')
+	util.setMenu(location.pathname)
 	//console.log("aaa")
 	$.ajax({
 		type:"get",

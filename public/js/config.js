@@ -2,21 +2,23 @@ require.config({
 	baseUrl:'/public/assets',
 	paths:{
 		jquery:"jquery/jquery.min",
-		common:"../js/common",
 		cookie:"jquery-cookie/jquery.cookie",
 		template:"artTemplate/template",
 		bootstrap:"bootstrap/js/bootstrap",
+		datepicker:"bootstrap-datepicker/js/bootstrap-datepicker.min",
+		datepickerLanguage:"bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min",
+		validate:"validate/jquery-validate.min",
+		form:"jquery-form/jquery.form",
+		uploadify:"uploadify/jquery.uploadify.min",
+		region:"jquery-region/jquery.region",
+		ckeditor:"ckeditor/ckeditor",
 		util:"../js/util",
+		common:"../js/common",
 		login:"../js/login",
 		teacherList:"../js/teacher-list",
 		teacherAdd:"../js/teacher-add",
-		datepicker:"bootstrap-datepicker/js/bootstrap-datepicker.min",
-		datepickerLanguage:"bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min",
-		form:"jquery-form/jquery.form.min",
-		validate:"validate/jquery-validate.min",
 		settings:"../js/setting",
-		uploadify:"uploadify/jquery.uploadify.min",
-		region:"jquery-region/jquery.region"
+		index:"../js/index"
 	},
 	shim:{
 		bootstrap:{
@@ -30,6 +32,9 @@ require.config({
 		},
 		uploadify:{
 			deps:['jquery']
+		},
+		ckeditor:{
+			exports:'CKEDITOR'
 		}
 	}
 });

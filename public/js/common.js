@@ -36,8 +36,6 @@ define(['jquery','cookie'],function($){
 	var loginInfo = $.cookie("loginInfo");
 	loginInfo = loginInfo && JSON.parse(loginInfo);
 	$(".profile img").attr("src",loginInfo.tc_avatar);
-	$(".profile h4").text(loginInfo.tc_name)
-
-
+	$(".profile h4").text(loginInfo.tc_name);
 
 })
