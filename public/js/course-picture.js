@@ -27,7 +27,11 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
 				onUploadSuccess:function(a,b,c){
 					//console.log(b)
 					var obj = JSON.parse(b)
-					$(".preview img").attr("src",obj.result.path)
+					$(".preview img").attr("src",obj.result.path);
+					//图片上传完直接出现裁剪选区
+					pictureCrop();
+					//修改裁切图片文字
+					$("#cropBtn").text("保存图片").attr('data-flag',true);
 				}
 			})
 			//获取图片
@@ -45,7 +49,7 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
 						type:"post",
 						data:{cs_id:csId},
 						success:function(data){
-							//console.log(data)
+							console.log(data)
 							if(data.code == 200){
 								location.href='/course/lesson?cs_id='+data.result.cs_id;
 							}
