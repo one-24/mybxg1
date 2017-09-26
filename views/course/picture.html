@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include("./views/common/style.html"); ?>
+    <link rel="stylesheet" href="/public/assets/jcrop/css/jcrop.css">
 </head>
 <body>
     
@@ -60,6 +61,13 @@
                             </a>
                         </li>
                     </ul>
+                    <!-- 接收图片裁切数据的表单 -->
+                    <form id="cropForm" style="display: none">
+                        <input type="text" name="x">
+                        <input type="text" name="y">
+                        <input type="text" name="w">
+                        <input type="text" name="h">
+                    </form>
                     <!-- 课程图片 -->
                     <div class="content">
                         <!-- 标题 -->
@@ -83,7 +91,7 @@
                                 <!-- <a href="./course_add_step3.html" class="btn btn-success btn-sm">选择图片</a> -->
                             </div>
                             <div class="col-xs-2">
-                                <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+                                <a id="cropBtn" href="javascript:;" class="btn btn-warning btn-sm" >裁切图片</a>
                             </div>
                         </div>
                     </div>
