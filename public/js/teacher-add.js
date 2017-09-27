@@ -1,4 +1,4 @@
-define(['jquery','template','util','datepicker','datepickerLanguage','form','validate'],function($,template,util){
+define(['jquery','template','util','datepicker','datepickerLanguage','form','validate','SomeElse'],function($,template,util){
 	var tcId = util.qs("tc-id")
 	//console.log(tcId)
 	if(tcId){

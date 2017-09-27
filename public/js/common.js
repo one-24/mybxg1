@@ -35,7 +35,9 @@ define(['jquery','cookie'],function($){
 	//"{"tc_name":"admin","tc_avatar":"http://static.botue.com/images/avatar/58d3d54990dea.png"}"
 	var loginInfo = $.cookie("loginInfo");
 	loginInfo = loginInfo && JSON.parse(loginInfo);
-	$(".profile img").attr("src",loginInfo.tc_avatar);
-	$(".profile h4").text(loginInfo.tc_name);
+	if(loginInfo){
+		$(".profile img").attr("src",loginInfo.tc_avatar);
+		$(".profile h4").text(loginInfo.tc_name);
+	}
 
 })

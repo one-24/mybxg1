@@ -1,4 +1,4 @@
-define(['jquery','template','util','bootstrap'],function($,template,util){
+define(['jquery','template','util','bootstrap','SomeElse'],function($,template,util){
 	//console.log(location.pathname,'aaa')
 	util.setMenu(location.pathname)
 	//console.log("aaa")

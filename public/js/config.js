@@ -13,6 +13,7 @@ require.config({
 		region:"jquery-region/jquery.region",
 		ckeditor:"ckeditor/ckeditor",
 		jcrop:"jcrop/js/jcrop",
+		echarts:"echarts/echarts.min",
 		util:"../js/util",
 		common:"../js/common",
 		login:"../js/login",
@@ -24,7 +25,8 @@ require.config({
 		courseAdd:"../js/course-add",
 		courseBasic:"../js/course-basic",
 		coursePicture:"../js/course-picture",
-		courseLesson:"../js/course-lesson"
+		courseLesson:"../js/course-lesson",
+		SomeElse:"../js/SomeElse"
 	},
 	shim:{
 		bootstrap:{

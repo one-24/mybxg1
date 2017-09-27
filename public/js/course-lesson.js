@@ -1,4 +1,4 @@
-define(['jquery','template','util','bootstrap','form'],function($,template,util){
+define(['jquery','template','util','bootstrap','form','SomeElse'],function($,template,util){
 	util.setMenu("/course/add");
 	var csId = util.qs("cs_id")
 	$.ajax({
